@@ -55,5 +55,11 @@ Steps:
 	kubectl create -f application/openmrs/external-database.yaml
 	kubectl create -f application/openmrs/openmrs-pv.yaml
 	kubectl create -f application/openmrs/openmrs-claims-gke.yaml
-	kubectl create -f application/openmrs/openmrs-deployment.yaml
+        kubectl create -f application/openmrs/openmrs-deployment.yaml
+1. External Service access
+    i)create static ip using command below
+       gcloud compute addresses create openmrs-dev-ip --global
+    ii)gcloud compute addresses create openmrs-dev-ip --global   
+        output: address: 100.0.113.40
+2.To expose a web application on a static IP using Ingress, you need to deploy two resources:
 	```
