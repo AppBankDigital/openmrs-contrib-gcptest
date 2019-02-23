@@ -50,7 +50,7 @@ Steps:
 	```
 	(press enter to run the command it automatically puts on the first line)
 	kubectl create secret generic db-user-pass --from-literal username=openmrs --from-literal password=0penmr5
-	git clone https://github.com/djazayeri/openmrs-contrib-gcptest.git
+	git clone https://github.com/AppBankDigital/openmrs-contrib-gcptest.git
 	cd openmrs-contrib-gcptest/kubernetes/
 	kubectl create -f application/openmrs/external-database.yaml
 	kubectl create -f application/openmrs/openmrs-pv.yaml
