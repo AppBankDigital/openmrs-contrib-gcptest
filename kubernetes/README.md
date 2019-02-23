@@ -1,10 +1,18 @@
 ## Running locally
  
+
+
 Prerequisites:
 
 1. Install minikube (see https://github.com/kubernetes/minikube)
 2. Run MySQL on some IP that can be accessed from the Kubernetes cluster
    * If using Cloud SQL make sure binary logging is _disabled_ for the initial installation
+OR
+Creating kubernetes cluster on goole shell
+Cleate kubernetes cluster google
+1)gcloud container clusters create openmrs-cluster --num-nodes=3 --zone us-central1-a
+2)gcloud container clusters get-credentials openmrs-cluster --zone us-central1-a
+
 
 Steps:
 
