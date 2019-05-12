@@ -15,6 +15,6 @@ metadata:
  name: mysql
 subsets:
  - addresses:
-     - ip: 35.230.116.39 # IP of your MySQL instance
+     - ip: 127.0.0.1 # IP of your MySQL instance
    ports:
      - port: 3306
