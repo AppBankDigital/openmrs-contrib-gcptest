@@ -11,7 +11,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "/mnt/data/modules"
+    path: "/home/prapakaran/openmrs/kubernetes/data/modules"
 ---
 kind: PersistentVolume
 apiVersion: v1
@@ -26,4 +26,4 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "/mnt/data/owa"
+    path: "/home/prapakaran/openmrs/kubernetes/data/owa"

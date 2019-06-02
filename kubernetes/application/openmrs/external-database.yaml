@@ -2,19 +2,19 @@
 kind: Service
 apiVersion: v1
 metadata:
- name: mysql
+ name: mysqldb
 spec:
  type: ClusterIP
  ports:
  - port: 3306
-   targetPort: 3306
+   targetPort: 30070
 ---
 kind: Endpoints
 apiVersion: v1
 metadata:
- name: mysql
+ name: mysqldb
 subsets:
  - addresses:
-     - ip: 127.0.0.1 # IP of your MySQL instance
+     - ip: 192.168.99.100 # IP of your MySQL instance
    ports:
-     - port: 3306
+     - port: 30070

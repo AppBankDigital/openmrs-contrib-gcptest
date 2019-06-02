@@ -7,11 +7,12 @@ Prerequisites:
 1. Install minikube (see https://github.com/kubernetes/minikube)
 2. Run MySQL on some IP that can be accessed from the Kubernetes cluster
    * If using Cloud SQL make sure binary logging is _disabled_ for the initial installation
-OR
-Creating kubernetes cluster on goole shell
-Cleate kubernetes cluster google
-1)gcloud container clusters create openmrs-cluster --num-nodes=3 --zone us-central1-a
-2)gcloud container clusters get-credentials openmrs-cluster --zone us-central1-a
+    OR
+
+  Creating kubernetes cluster on goole shell
+  Cleate kubernetes cluster google
+  1)gcloud container clusters create openmrs-cluster --num-nodes=3 --zone us-central1-a
+  2)gcloud container clusters get-credentials openmrs-cluster --zone us-central1-a
 
 
 Steps:
@@ -37,7 +38,25 @@ Steps:
 	
 	# browse to running OpenMRS	
 	open http://$(minikube ip):30080/openmrs
-	```
+
+##mysql steps
+
+kuebctl apply -f mysql/mysql-pv.yaml
+
+kubectl apply -f mysql/mysql-deployment.yaml
+
+kubectl run -it --rm --image=mysql:5.6 --restart=Never mysql-client -- mysql -h 192.168.99.100 -popenmrs
+
+###creater user syntax
+
+CREATE USER 'openmrs'@'localhost' IDENTIFIED BY 'safehands';
+
+GRANT ALL PRIVILEGES ON * . * TO 'openmrs'@'localhost';
+
+FLUSH PRIVILEGES;
+
+
+
 
 ## Deploying to GKE
 
